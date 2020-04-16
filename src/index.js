@@ -1,5 +1,6 @@
 import {extendOptions,dragElement} from "./Utils";
 import {colorpicker} from "./Colorpicker";
+import './pmColor.css';
 
 L.PMColor =  L.Class.extend({
     includes: [colorpicker],

@@ -1,0 +1,22 @@
+{
+  "name": "pmcolor",
+  "version": "1.0.0",
+  "dependencies": {
+    "@jaames/iro": "^5.1.5"
+  },
+  "scripts": {},
+  "devDependencies": {
+    "leaflet": "^1.6.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "description": "This is a [Leaflet Geoman](https://github.com/geoman-io/leaflet-geoman) Subplugin",
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Falke-Design/PMColor.git"
+  },
+  "keywords": [],
+  "author": "Florian Bischof / Falke-Design",
+  "license": "ISC"
+}

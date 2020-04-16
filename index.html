@@ -1,0 +1,151 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leaflet PMColor: Colortool with colorbucket and pipette</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@geoman-io/leaflet-geoman-free@2.5.0/dist/leaflet-geoman.css">
+    <link rel="stylesheet" href="./demo/demo.css" />
+    <script src="https://unpkg.com/leaflet@latest/dist/leaflet.js"></script>
+</head>
+
+<body>
+    <a href="https://github.com/Falke-Design/PMLock"><img src="./demo/github-corner.png" class="githubcorner"/></a>
+    <div class="wrapper">
+
+        <article>
+            <h1 style="margin-bottom: 10px;">Leaflet <a href="https://github.com/Falke-Design/GeomanTriangle">PMColor</a>: Colortool with colorbucket and pipette</h1>
+            <span style="display: block;font-size: 19px;margin-bottom: 20px;">This is a <a href="https://github.com/geoman-io/leaflet-geoman">Leaflet Geoman</a> Subplugin</span>
+            <div class="map" id="example2"></div>
+        </article>
+        <article>
+            <br>
+            <h3><strong>Installation</strong></h3>
+            <span>Download <a href="https://raw.githubusercontent.com/Falke-Design/PMColor/master/dist/pmColor.js">pmColor.js</a> and include them in your project.</span>
+            <pre>&lt;script src="./dist/pmColor.js"&gt;&lt;/script&gt;</pre>
+            <span>or use the script over cdn:</span>
+            <pre>&lt;script src="https://cdn.jsdelivr.net/gh/Falke-Design/PMColor/dist/pmColor.js"&gt;&lt;/script&gt;</pre>
+            <br>
+            <h3><strong>Init PMColor</strong></h3>
+            <span>Create the L.PMColor button after Leaflet Geoman</span>
+            <pre>pmColor = new L.PMColor(map)</pre>
+            <span>You can define the width, positon and if the colorpicker is showing</span>
+            <pre>pmColor = new L.PMColor(map, {width: 180, pickerPosition: {top: 5, left: 100}, showPicker: true})</pre>
+
+            <h3><strong>Functions</strong></h3>
+            <span><strong>openColorPicker / closeColorPicker</strong></span>
+            <div>
+                <pre>pmColor.openColorPicker()</pre>
+                <pre>pmColor.closeColorPicker()</pre>
+            </div>
+            <span><strong>enableBucket / disableBucket</strong></span>
+            <div>
+                <pre>pmColor.enableBucket()</pre>
+                <pre>pmColor.disableBucket()</pre>
+            </div>
+            <span><strong>enablePipette / disablePipette</strong></span>
+            <div>
+                <pre>pmColor.enablePipette()</pre>
+                <pre>pmColor.disablePipette()</pre>
+            </div>
+            <span><strong>disable</strong></span>
+            <div>
+                <span>Disable bucket and pipette</span>
+                <pre>pmColor.disable()</pre>
+            </div>
+            <span><strong>setText</strong></span>
+            <div>
+                <pre>pmColor.setText(text)</pre>
+                <pre>text: {pipette: "Pipette", bucket: "Bucket", close: "Close", cancel: "Cancel", title: "Colortool" }</pre>
+            </div>
+            <span><strong>setMode</strong></span>
+            <div>
+                <span>Set the active mode "bucket" | "pipette" | ""</span>
+                <pre>pmColor.setMode(mode)</pre>
+            </div>
+            <span><strong>getMode</strong></span>
+            <div>
+                <span>Get the active mode "bucket" | "pipette" | ""</span>
+                <pre>pmColor.getMode()</pre>
+            </div>
+            <span><strong>setColorPickerType</strong></span>
+            <div>
+                <span>Set the active colorpicker type "fill" | "border" </span>
+                <pre>pmColor.setColorPickerType(type)</pre>
+            </div>
+            <span><strong>getColorPickerType</strong></span>
+            <div>
+                <span>Get the active colorpicker type "fill" | "border"</span>
+                <pre>pmColor.getColorPickerType()</pre>
+            </div>
+
+
+
+
+
+
+            <span><strong>setColor</strong></span>
+            <div>
+                <span>Set the colors</span>
+                <pre>pmColor.setColor(color)</pre>
+                <pre>color: {fill: '#f00', border: '#fff'}</pre>
+            </div>
+            <span><strong>getColor</strong></span>
+            <div>
+                <span>Get the colors fill & border</span>
+                <pre>pmColor.getColor()</pre>
+            </div>
+            <span><strong>setOpacity</strong></span>
+            <div>
+                <span>Set the opacity between 0 and 1</span>
+                <pre>pmColor.setOpacity(color)</pre>
+                <pre>opacity: {fill: 0.2, border: 1}</pre>
+            </div>
+            <span><strong>getOpacity</strong></span>
+            <div>
+                <span>Get the opacity fill & border</span>
+                <pre>pmColor.getOpacity()</pre>
+            </div>
+            <span><strong>setStyle()</strong></span>
+            <div>
+                <span>Set the color and opacity in leaflet format</span>
+                <pre>pmColor.setStyle(style)</pre>
+                <pre>style: {color: '#fff', fillColor: '#f00', opacity: 1, fillOpacity: 0.2}</pre>
+            </div>
+            <span><strong>getStyle()</strong></span>
+            <div>
+                <span>Get the color and opacity in leaflet format "color" | "fillColor" | "opacity" | "fillOpacity"</span>
+                <pre>pmColor.getStyle()</pre>
+            </div>
+            <span><strong>setPosition</strong></span>
+            <div>
+                <span>Set the position from the colorpicker "top" | "left"</span>
+                <pre>pmColor.setPosition(position)</pre>
+                <pre>position: { top: 5, left: 100}</pre>
+            </div>
+            <span><strong>getPosition</strong></span>
+            <div>
+                <span>Get the position from the colorpicker "top" | "left"</span>
+                <pre>pmColor.getPosition()</pre>
+            </div>
+
+            <h3>Extends L.PM.Draw</h3>
+            <span><strong>setPathOptions</strong></span>
+            <div>
+                <span>Overwrite the pathOptions, templineStyle and hintlineStyle from all path Layers (Line, Polyline, Rectangle, CircleMarker, Circle)</span>
+                <pre>map.pm.Draw.Line.setPathOptions(options)</pre>
+            </div>
+            <span><strong>setHintPathOptions</strong></span>
+            <div>
+                <span>Overwrite the templineStyle and hintlineStyle from all path Layers (Line, Polyline, Rectangle, CircleMarker, Circle)</span>
+                <pre>map.pm.Draw.Line.setHintPathOptions(options)</pre>
+            </div>
+        </article>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@geoman-io/leaflet-geoman-free@2.5.0/dist/leaflet-geoman.min.js"></script>
+    <script src="dist/pmColor.js"></script>
+    <script src="./demo/demo.js"></script>
+</body>
+
+</html>
